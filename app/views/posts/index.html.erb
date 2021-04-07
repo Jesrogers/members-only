@@ -1,5 +1,16 @@
-<% @posts.each do |post|%>
-    <p><%= post.author %></p>
-    <strong><%= post.title %></strong>
-    <p><%= post.body %></p>
-<% end %>
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-two-thirds">
+                <% @posts.each do |post|%>
+                    <p><%= post.author %></p>
+                    <strong><%= post.title %></strong>
+                    <p><%= post.body %></p>
+                <% end %>                
+            </div>
+            <div class="column is-one-third">Test</div>
+        </div>
+    </div>
+</section>
+
+

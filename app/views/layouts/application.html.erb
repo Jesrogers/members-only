@@ -11,6 +11,24 @@
   </head>
 
   <body>
+    <nav class="navbar is-link">
+      <div class="navbar-brand">
+        <%= link_to root_path, class: "navbar-item" do %>
+          <img src="https://bulma.io/images/placeholders/64x64.png">
+        <% end %>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu">
+        <div class="navbar-start">
+          <%= link_to "Posts", root_path, class: "navbar-item"%>
+        </div>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
