@@ -3,7 +3,7 @@
         <div class="columns">
             <div class="column is-two-thirds">
                 <% @posts.each do |post|%>
-                    <p><%= post.author %></p>
+                    <p><%= post.user.name %></p>
                     <strong><%= post.title %></strong>
                     <p><%= post.body %></p>
                 <% end %>                
