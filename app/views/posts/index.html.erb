@@ -3,12 +3,34 @@
         <div class="columns">
             <div class="column is-two-thirds">
                 <% @posts.each do |post|%>
-                    <p><%= post.user.name %></p>
-                    <strong><%= post.title %></strong>
-                    <p><%= post.body %></p>
-                <% end %>                
+                    <div class="box">
+                        <article class="media">
+                            <figure class="media-left">
+                                <p class="image is-64x64">
+                                <img src="https://bulma.io/images/placeholders/128x128.png">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <div class="content">
+                                <p>
+                                    <strong><%= post.title %></strong> 
+                                    <% if user_signed_in? %>
+                                        <small><%= post.user.name %></small> 
+                                    <% else %>
+                                        <small>Hidden Author</small>                                     
+                                    <% end %>
+
+                                    <br>
+                                    <%= post.body %>
+                                    <br>
+                                    <small><%= post.created_at %></small>
+                                </p>
+                                </div>
+                        </article>
+                    </div>
+                <% end %>
             </div>
-            <div class="column is-one-third">Test</div>
+            <div class="column is-one-third">Other Column</div>
         </div>
     </div>
 </section>

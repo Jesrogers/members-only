@@ -1,0 +1,19 @@
+<%= form_with model: post, local: true do |form| %>
+    <div>
+        <div class="field">
+            <%= form.label :title, "Title", class: "label" %>
+            <div class="control">
+                <%= form.text_field :title, class: "input" %>
+            </div>
+        </div>
+        <div class="field">
+            <%= form.label :body, "Body", class: "label" %>
+            <div class="control">
+                <%= form.text_area :body, class: "textarea" %>
+            </div>
+            </div>
+        </div>
+        
+        <%= form.submit "Submit", class: "button is-link" %>        
+    </div>
+<% end %>

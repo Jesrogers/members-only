@@ -6,8 +6,22 @@ class PostsController < ApplicationController
     end
 
     def new
+        @post = current_user.posts.build
     end
 
     def create
+        @post = current_user.posts.build(post_params)
+
+            if @post.save
+                redirect_to root_path, notice: "A new post titled \"#{@post.title}\" was created!"
+            else
+                render :new
+            end
+    end
+
+    private
+
+    def post_params
+        params.require(:post).permit(:title, :body)
     end
 end
